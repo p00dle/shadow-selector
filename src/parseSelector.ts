@@ -65,7 +65,7 @@ export function parseSelector(selectorString: string): Selector[][] {
         char.lastIndex = cursor;
         const match = char.exec(str);
         if (!match) throw new Error('Malformed selector string. expected node type');
-        selectors[depth].push({ type: 'type', value: match[0] });
+        selectors[depth].push({ type: 'type', value: match[0].toLowerCase() });
         cursor = char.lastIndex;
         break;
       }

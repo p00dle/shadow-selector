@@ -29,11 +29,11 @@ describe('parseSelector', () => {
     ]);
   });
   test('tag, class, attr', () => {
-    expect(parseSelector('div.foo[key="value"]')).toEqual([
+    expect(parseSelector('div.foo[key="value with spaces ..."]')).toEqual([
       [
         { type: 'type', value: 'div' },
         { type: 'class', value: 'foo' },
-        { type: 'attr', key: 'key', value: 'value' },
+        { type: 'attr', key: 'key', value: 'value with spaces ...' },
       ],
     ]);
   });

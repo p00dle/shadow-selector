@@ -17,7 +17,7 @@ export function createNode(domElement: DomElement, ancestorNodes: Node[] = [], e
   const children = toArray(childrenCollection);
   const hasChildren = children.length > 0;
   const classes = toArray(domElement.classList);
-  const nodeName = domElement.nodeName;
+  const nodeName = domElement.nodeName.toLowerCase();
   const id = attributes.id;
 
   const node: Node = {
