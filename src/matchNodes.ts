@@ -26,13 +26,13 @@ export function matchNodes(rootNode: Node, selectors: Selector[]): Node[] {
     } else {
       switch (selector.type) {
         case 'id':
-          matchedNodes = matchedNodes.filter((node) => (node.descandantNodesById[selector.value] || []).includes(node));
+          matchedNodes = matchedNodes.filter((node) => node.id === selector.value);
           break;
         case 'type':
-          matchedNodes = matchedNodes.filter((node) => (node.descandantNodesByNodeName[selector.value] || []).includes(node));
+          matchedNodes = matchedNodes.filter((node) => node.nodeName === selector.value);
           break;
         case 'class':
-          matchedNodes = matchedNodes.filter((node) => (node.descandantNodesByClass[selector.value] || []).includes(node));
+          matchedNodes = matchedNodes.filter((node) => node.classes.includes(selector.value));
           break;
         case 'attr':
           matchedNodes = matchedNodes.filter((node) => node.attributes[selector.key] === selector.value);
