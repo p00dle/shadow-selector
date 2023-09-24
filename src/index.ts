@@ -6,7 +6,7 @@ import { matchNodes } from './matchNodes';
 import { parseSelector } from './parseSelector';
 
 const elementNodeMap = new Map<DomElement, Node>();
-let shouldUseCache = true;
+let shouldUseCache = false;
 
 export function resetCache() {
   elementNodeMap.clear();
