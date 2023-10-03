@@ -1,6 +1,7 @@
 import { describe, expect, test } from 'vitest';
 import type { DomElement } from './types/DomElement';
-import { createNode } from './createNode';
+import { mapNodes } from './mapNodes';
+import { parseDomElement } from './parseDomElement';
 
 interface ElementProps {
   tag: string;
@@ -46,7 +47,7 @@ export function createDomElement(props: Partial<ElementProps> = defaultElementPr
 
 describe('createNode', () => {
   test('create single node', () => {
-    const node = createNode(createDomElement({ tag: 'span' }));
+    const node = mapNodes(parseDomElement(createDomElement({ tag: 'span' })));
     expect(node.nodeName).toBe('span');
   });
   // TODO: increase test coverage

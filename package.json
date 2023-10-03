@@ -1,6 +1,6 @@
 {
   "name": "shadow-selector",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "querySelector like implementation that can handle Web Components",
   "main": "./dist/index.js",
   "author": "Krzysztof Siuda",

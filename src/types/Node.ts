@@ -1,11 +1,11 @@
 import type { DomElement } from './DomElement';
 
 export interface Node {
-  domElement: DomElement;
+  domElement: DomElement | null;
   ancestorNodes: Node[];
-  parentNode?: Node;
+  parentNode: Node | null;
   attributes: Record<string, string>;
-  id?: string;
+  id: string | null;
   classes: string[];
   nodeName: string;
   children: Node[];
@@ -13,5 +13,5 @@ export interface Node {
   descandantNodesById: Record<string, Node[]>;
   descandantNodesByNodeName: Record<string, Node[]>;
   descandantNodesByClass: Record<string, Node[]>;
-  textContent?: string;
+  textContent: string | null;
 }
